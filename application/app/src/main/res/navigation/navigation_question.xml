@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation_main"
+            app:startDestination="@id/questionFragment">
+
+    <fragment
+            android:id="@+id/questionFragment"
+            tools:layout="@layout/fragment_question"
+            android:name="br.com.nautilustar.quizsurvival.features.questions.fragments.QuestionFragment"
+            android:label="QuestionFragment">
+        <action
+                android:id="@+id/action_questionFragment_to_questionResultFragment"
+                app:destination="@id/questionResultFragment"/>
+    </fragment>
+    <fragment
+            tools:layout="@layout/fragment_question_result"
+            android:id="@+id/questionResultFragment"
+            android:name="br.com.nautilustar.quizsurvival.features.questions.fragments.QuestionResultFragment"
+            android:label="QuestionResultFragment"/>
+</navigation>

@@ -1,4 +1,4 @@
-package br.com.nautilustar.quizsurvival.features
+package br.com.nautilustar.quizsurvival
 
 import android.app.Activity
 import android.app.Application
@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import br.com.nautilustar.core.base.Injectable
-import br.com.nautilustar.quizsurvival.features.di.AppComponent
-import br.com.nautilustar.quizsurvival.features.di.DaggerAppComponent
+import br.com.nautilustar.quizsurvival.di.AppComponent
+import br.com.nautilustar.quizsurvival.di.DaggerAppComponent
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
