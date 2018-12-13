@@ -1,6 +1,5 @@
 package br.com.nautilustar.quizsurvival.di.modules
 
-import br.com.engcad.entrance.di.modules.FragmentModule
 import br.com.nautilustar.quizsurvival.features.questions.actvities.QuestionActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

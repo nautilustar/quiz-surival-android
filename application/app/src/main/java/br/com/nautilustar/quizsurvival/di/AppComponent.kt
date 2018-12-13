@@ -1,12 +1,12 @@
 package br.com.nautilustar.quizsurvival.di
 
 import android.app.Application
-import br.com.engcad.entrance.di.modules.ViewModelModule
 import br.com.nautilustar.core.di.modules.AndroidModule
 import br.com.nautilustar.core.di.modules.FactoryModule
 import br.com.nautilustar.quizsurvival.AndroidApplication
 import br.com.nautilustar.quizsurvival.di.modules.ActivityModule
 import br.com.nautilustar.quizsurvival.di.modules.FragmentModule
+import br.com.nautilustar.quizsurvival.di.modules.ViewModelModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule

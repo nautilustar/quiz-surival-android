@@ -1,18 +1,17 @@
-package br.com.engcad.entrance.di.modules
+package br.com.nautilustar.quizsurvival.di.modules
 
 import androidx.lifecycle.ViewModel
-import br.com.engcad.core.di.components.CoreSubComponent
-import br.com.engcad.core.viewmodel.ViewModelKey
-import br.com.engcad.entrance.viewmodel.EntranceViewModel
+import br.com.nautilustar.core.viewmodel.ViewModelKey
+import br.com.nautilustar.quizsurvival.features.questions.viewmodel.QuestionViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 
-@Module(subcomponents = [CoreSubComponent::class])
+@Module
 abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(EntranceViewModel::class)
-    abstract fun bindEntranceViewModel(viewModel: EntranceViewModel): ViewModel
+    @ViewModelKey(QuestionViewModel::class)
+    abstract fun questionViewModel(viewModel: QuestionViewModel): ViewModel
 }
