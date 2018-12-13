@@ -5,20 +5,25 @@
     <dist:module dist:instant="true"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <application android:allowBackup="true"
-                 android:label="@string/app_name"
-                 android:icon="@mipmap/ic_launcher"
-                 android:roundIcon="@mipmap/ic_launcher_round"
-                 android:supportsRtl="true"
-                 android:theme="@style/AppTheme">
+    <application
+            android:name=".features.AndroidApplication"
+            android:allowBackup="true"
+            android:label="@string/app_name"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
 
         <activity
-                android:name=".SplashActivity">
+                android:name="br.com.nautilustar.quizsurvival.features.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+                android:name="br.com.nautilustar.quizsurvival.features.questions.QuestionActivity"/>
     </application>
 </manifest>

@@ -1,7 +1,8 @@
-package br.com.nautilustar.quizsurvival
+package br.com.nautilustar.quizsurvival.features.splash
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import br.com.nautilustar.quizsurvival.R
 
 class SplashActivity : AppCompatActivity() {
 
