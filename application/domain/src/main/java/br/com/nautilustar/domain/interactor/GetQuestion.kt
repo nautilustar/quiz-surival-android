@@ -8,8 +8,7 @@ import br.com.nautilustar.domain.repository.QuestionRepository
 import io.reactivex.Observable
 import javax.inject.Inject
 
-class GetSettings @Inject
-constructor(
+class GetQuestion @Inject constructor(
     private val questionRepository: QuestionRepository,
     threadExecutor: ThreadExecutor,
     postExecutionThread: PostExecutionThread

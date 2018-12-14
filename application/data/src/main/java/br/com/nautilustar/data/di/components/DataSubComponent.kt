@@ -1,11 +1,13 @@
-package br.com.engcad.data.di.components
+package br.com.nautilustar.data.di.components
 
-import br.com.engcad.data.di.modules.SettingsModule
+import br.com.nautilustar.data.di.modules.QuestionModule
 import dagger.Subcomponent
 
-@Subcomponent(modules = [
-    SettingsModule::class
-])
+@Subcomponent(
+    modules = [
+        QuestionModule::class
+    ]
+)
 interface DataSubComponent {
 
     @Subcomponent.Builder
