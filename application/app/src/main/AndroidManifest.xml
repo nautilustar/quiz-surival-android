@@ -15,10 +15,8 @@
             android:theme="@style/AppTheme">
 
         <activity
-                android:name="br.com.nautilustar.quizsurvival.features.splash.SplashActivity"/>
-
-        <activity
-                android:name="br.com.nautilustar.quizsurvival.features.questions.actvities.QuestionActivity">
+                android:name="br.com.nautilustar.quizsurvival.features.questions.actvities.QuestionActivity"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
