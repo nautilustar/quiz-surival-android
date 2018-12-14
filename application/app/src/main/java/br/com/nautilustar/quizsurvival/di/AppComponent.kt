@@ -3,6 +3,7 @@ package br.com.nautilustar.quizsurvival.di
 import android.app.Application
 import br.com.nautilustar.core.di.modules.AndroidModule
 import br.com.nautilustar.core.di.modules.FactoryModule
+import br.com.nautilustar.data.di.modules.QuestionModule
 import br.com.nautilustar.quizsurvival.AndroidApplication
 import br.com.nautilustar.quizsurvival.di.modules.ActivityModule
 import br.com.nautilustar.quizsurvival.di.modules.FragmentModule
@@ -20,7 +21,8 @@ import javax.inject.Singleton
         AndroidModule::class,
         ActivityModule::class,
         FragmentModule::class,
-        ViewModelModule::class
+        ViewModelModule::class,
+        QuestionModule::class
     ]
 )
 interface AppComponent {

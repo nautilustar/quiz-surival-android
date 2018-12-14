@@ -1,4 +1,4 @@
-package br.com.nautilustar.quizsurvival.features.questions.actvities
+package br.com.nautilustar.quizsurvival.features.questions.screens
 
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders

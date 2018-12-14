@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="handlers"
+                  type="br.com.nautilustar.quizsurvival.features.questions.screens.game.QuestionHandler"/>
+
+        <variable name="questionModel"
+                  type="br.com.nautilustar.domain.model.QuestionModel"/>
+    </data>
     <RelativeLayout
             android:gravity="center"
             android:layout_width="match_parent"
@@ -9,7 +16,7 @@
                 android:id="@+id/txt_question"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="QUAL O NOME VERDADEIRO DA TIAZINHA?"/>
+                android:text="@{questionModel.question}"/>
 
         <RadioGroup
                 android:layout_marginTop="16dp"
@@ -23,25 +30,25 @@
                     android:layout_margin="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SUZANA WERNER"/>
+                    android:text="@{questionModel.a}"/>
 
             <CheckedTextView
                     android:layout_margin="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="JOANA PRADO"/>
+                    android:text="@{questionModel.b}"/>
 
             <CheckedTextView
                     android:layout_margin="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="LETÍCIA SPILLER"/>
+                    android:text="@{questionModel.c}"/>
 
             <CheckedTextView
                     android:layout_margin="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SUZANA ALVES"/>
+                    android:text="@{questionModel.d}"/>
         </RadioGroup>
     </RelativeLayout>
 </layout>

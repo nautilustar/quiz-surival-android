@@ -8,7 +8,7 @@
     <fragment
             android:id="@+id/questionFragment"
             tools:layout="@layout/fragment_question"
-            android:name="br.com.nautilustar.quizsurvival.features.questions.fragments.QuestionFragment"
+            android:name="br.com.nautilustar.quizsurvival.features.questions.screens.game.QuestionFragment"
             android:label="QuestionFragment">
         <action
                 android:id="@+id/action_questionFragment_to_questionResultFragment"
@@ -17,6 +17,6 @@
     <fragment
             tools:layout="@layout/fragment_question_result"
             android:id="@+id/questionResultFragment"
-            android:name="br.com.nautilustar.quizsurvival.features.questions.fragments.QuestionResultFragment"
+            android:name="br.com.nautilustar.quizsurvival.features.questions.screens.result.QuestionResultFragment"
             android:label="QuestionResultFragment"/>
 </navigation>

@@ -1,4 +1,4 @@
-package br.com.nautilustar.quizsurvival.features.questions.fragments
+package br.com.nautilustar.quizsurvival.features.questions.screens.result
 
 import androidx.fragment.app.Fragment
 

@@ -1,6 +1,6 @@
 package br.com.nautilustar.quizsurvival.di.modules
 
-import br.com.nautilustar.quizsurvival.features.questions.actvities.QuestionActivity
+import br.com.nautilustar.quizsurvival.features.questions.screens.QuestionActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
