@@ -1,6 +1,7 @@
 package br.com.nautilustar.quizsurvival.di.modules
 
 import br.com.nautilustar.quizsurvival.features.questions.screens.game.QuestionFragment
+import br.com.nautilustar.quizsurvival.features.questions.screens.game.QuestionStartFragment
 import br.com.nautilustar.quizsurvival.features.questions.screens.result.QuestionResultFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -13,4 +14,7 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun questionResultFragment(): QuestionResultFragment
+
+    @ContributesAndroidInjector
+    abstract fun questionStartFragment(): QuestionStartFragment
 }

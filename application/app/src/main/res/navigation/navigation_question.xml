@@ -3,17 +3,22 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/navigation_main"
-            app:startDestination="@id/questionFragment">
+            app:startDestination="@id/questionStartFragment">
 
+    <fragment
+            tools:layout="@layout/fragment_question_start"
+            android:id="@+id/questionStartFragment"
+            android:name="br.com.nautilustar.quizsurvival.features.questions.screens.game.QuestionStartFragment"
+            android:label="QuestionStartFragment">
+
+        <action android:id="@+id/action_questionStartFragment_to_questionFragment"
+                app:destination="@id/questionFragment"/>
+    </fragment>
     <fragment
             android:id="@+id/questionFragment"
             tools:layout="@layout/fragment_question"
             android:name="br.com.nautilustar.quizsurvival.features.questions.screens.game.QuestionFragment"
-            android:label="QuestionFragment">
-        <action
-                android:id="@+id/action_questionFragment_to_questionResultFragment"
-                app:destination="@id/questionResultFragment"/>
-    </fragment>
+            android:label="QuestionFragment"/>
     <fragment
             tools:layout="@layout/fragment_question_result"
             android:id="@+id/questionResultFragment"

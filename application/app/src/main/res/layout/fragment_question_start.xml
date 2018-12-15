@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="br.com.nautilustar.quizsurvival.features.questions.screens.game.QuestionStartFragment">
+    <data>
+        <variable name="viewModel"
+                  type="br.com.nautilustar.quizsurvival.features.questions.viewmodel.QuestionViewModel"/>
+    </data>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:layout_marginTop="8dp"
+                android:id="@+id/btn_start"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Iniciar"
+                android:onClick="@{() -> viewModel.input.start()}"
+        />
+    </RelativeLayout>
+</layout>
