@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">QuizSurvival</string>
+    <string name="btn_next_question">Próxima</string>
 </resources>

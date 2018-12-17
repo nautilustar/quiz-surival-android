@@ -1,70 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/layout">
     <data>
-        <variable name="viewModel"
-                  type="br.com.nautilustar.quizsurvival.features.questions.viewmodel.QuestionViewModel"/>
-
         <variable name="questionModel"
                   type="br.com.nautilustar.domain.model.QuestionModel"/>
+
+        <variable name="progress"
+                  type="Integer"/>
+
+        <variable name="handlers"
+                  type="br.com.nautilustar.quizsurvival.features.questions.screens.game.QuestionListener"/>
     </data>
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:padding="16dp"
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         <TextView
-                android:id="@+id/txt_question"
+                android:text="@{questionModel.question}"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut arcu lectus. Phasellus pretium placerat libero a venenatis."
                 android:layout_width="wrap_content"
-                tools:text="PERGUNTA"
-                android:layout_height="wrap_content"
-                android:text="@{questionModel.question}"/>
+                android:layout_height="97dp"
+                android:id="@+id/textView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/radioGroup" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"/>
 
         <RadioGroup
-                android:layout_marginTop="16dp"
-                android:layout_below="@id/txt_question"
-                android:id="@+id/container_group_answer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_width="285dp"
+                android:layout_height="227dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/radioGroup">
 
-            <CheckedTextView
-                    tools:text="Alternativa A"
-                    android:layout_margin="4dp"
-                    android:layout_width="wrap_content"
+            <RadioButton
+                    android:text="@{questionModel.a}"
+                    tools:text="Lorem ipsum dolor sit amet"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{questionModel.a}"/>
+                    android:id="@+id/radioButton3"
+                    android:layout_weight="1"/>
 
-            <CheckedTextView
-                    tools:text="Alternativa B"
-                    android:layout_margin="4dp"
-                    android:layout_width="wrap_content"
+            <RadioButton
+                    android:text="@{questionModel.b}"
+                    tools:text="Lorem ipsum dolor sit amet"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{questionModel.b}"/>
+                    android:id="@+id/radioButton4"
+                    android:layout_weight="1"/>
 
-            <CheckedTextView
-                    tools:text="Alternativa C"
-                    android:layout_margin="4dp"
-                    android:layout_width="wrap_content"
+            <RadioButton
+                    android:text="@{questionModel.c}"
+                    tools:text="Lorem ipsum dolor sit amet"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{questionModel.c}"/>
+                    android:id="@+id/radioButton5"
+                    android:layout_weight="1"/>
 
-            <CheckedTextView
-                    tools:text="Alternativa D"
-                    android:layout_margin="4dp"
-                    android:layout_width="wrap_content"
+            <RadioButton
+                    android:text="@{questionModel.d}"
+                    tools:text="Lorem ipsum dolor sit amet"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{questionModel.d}"/>
+                    android:id="@+id/radioButton"
+                    android:layout_weight="1"/>
         </RadioGroup>
 
-        <androidx.appcompat.widget.AppCompatButton
-                android:layout_below="@id/container_group_answer"
+        <ProgressBar
+                android:progress="@{progress}"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:id="@+id/btn_next"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/button2"/>
+
+        <Button
+                android:text="@string/btn_next_question"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Próxima"
-                android:onClick="@{() -> viewModel.input.next()}"
-        />
-    </RelativeLayout>
+                android:onClick="@{handlers::onNextClick}"
+                android:id="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="659dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

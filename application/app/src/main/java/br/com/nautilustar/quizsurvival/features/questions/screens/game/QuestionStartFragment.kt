@@ -32,7 +32,7 @@ class QuestionStartFragment : BaseFragment<FragmentQuestionStartBinding, Questio
     }
 
     private fun bindViewObserver() {
-        getViewModel().output.start.observe(this, Observer {
+        getViewModel().output.configure.observe(this, Observer {
             if (it) {
                 initGame()
             } else {

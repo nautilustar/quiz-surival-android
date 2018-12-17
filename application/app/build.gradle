@@ -94,6 +94,7 @@ dependencies {
     implementation libCore.arch.archNavigationUi
     implementation libCore.arch.archRuntime
     implementation libCore.arch.archExtensions
+    implementation libCore.arch.archConstraintLayout
     kapt libCore.arch.archCompiler
 
     implementation libCore.dagger.daggerAndroid
