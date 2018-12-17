@@ -1,4 +1,4 @@
-package br.com.nautilustar.data.entity
+package br.com.nautilustar.data.local.entity
 
 import io.realm.RealmObject
 

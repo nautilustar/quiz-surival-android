@@ -1,10 +1,10 @@
-package br.com.nautilustar.data.entity.mapper
+package br.com.nautilustar.data.local.entity.mapper
 
-import br.com.engcad.data.model.mapper.Mapper
-import br.com.nautilustar.data.entity.QuestionEntity
+import br.com.nautilustar.data.local.entity.QuestionEntity
+import br.com.nautilustar.data.repository.Mapper
 import br.com.nautilustar.domain.model.QuestionModel
 
-class QuestionMapper : Mapper<QuestionEntity, QuestionModel> {
+class QuestionLocalMapper : Mapper<QuestionEntity, QuestionModel> {
 
     override fun transform(entity: QuestionEntity): QuestionModel {
         return QuestionModel(

@@ -1,4 +1,4 @@
-package br.com.engcad.data.model.mapper
+package br.com.nautilustar.data.repository
 
 interface Mapper<E, T> {
     fun transform(entity: E): T

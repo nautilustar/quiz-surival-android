@@ -39,4 +39,12 @@ dependencies {
     kapt libCore.dagger.daggerProcessor
     kapt libCore.dagger.daggerCompiler
     implementation libCore.dagger.dagger
+
+    def libData = rootProject.ext.dataDependencies
+    implementation libData.okHttp
+    implementation libData.okHttpLogger
+    implementation libData.retrofit
+    implementation libData.retrofitConverter
+    implementation libData.retrofitAdapter
+    implementation libData.gson
 }

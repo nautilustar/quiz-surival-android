@@ -9,7 +9,9 @@ ext {
             arch            : '2.0.0-rc01',
             espresso        : '3.0.2',
             supportTest     : '1.0.2',
-            dagger          : '2.15'
+            dagger          : '2.15',
+            okHttp          : '3.8.0',
+            retrofit        : '2.3.0'
     ]
 
     coreDependencies = [
@@ -84,5 +86,14 @@ ext {
                     spek   : "org.jetbrains.spek:spek:1.0.25",
                     hamk   : "com.natpryce:hamkrest:1.2.3.0"
             ]
+    ]
+
+    dataDependencies = [
+            okHttp           : "com.squareup.okhttp3:okhttp:${version.okHttp}",
+            okHttpLogger     : "com.squareup.okhttp3:logging-interceptor:${version.okHttp}",
+            retrofit         : "com.squareup.retrofit2:retrofit:${version.retrofit}",
+            retrofitConverter: "com.squareup.retrofit2:converter-gson:${version.retrofit}",
+            retrofitAdapter  : "com.squareup.retrofit2:adapter-rxjava2:${version.retrofit}",
+            gson             : "com.google.code.gson:gson:2.8.1"
     ]
 }

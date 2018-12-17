@@ -1,13 +1,12 @@
-package br.com.nautilustar.data.repository.datasource
+package br.com.nautilustar.data.repository.datasource.local
 
-import br.com.nautilustar.data.entity.QuestionEntity
+import br.com.nautilustar.data.local.entity.QuestionEntity
 import br.com.nautilustar.data.local.questions.QuestionCache
-import br.com.nautilustar.domain.model.QuestionModel
 import io.reactivex.Observable
 
-class QuestionLocalDataStore(
+class QuestionLocalLocalDataStore(
     private val cache: QuestionCache
-) : IQuestionDataStore {
+) : IQuestionLocalDataStore {
 
     override fun getQuestions(): Observable<List<QuestionEntity>> {
         //return Observable.just(cache.output.getQuestions())
@@ -29,5 +28,9 @@ class QuestionLocalDataStore(
         }
 
         return list
+    }
+
+    override fun hasCached(): Boolean {
+        return cache.hasCache()
     }
 }

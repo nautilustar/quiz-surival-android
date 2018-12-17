@@ -1,6 +1,6 @@
 package br.com.nautilustar.data.local.questions
 
-import br.com.nautilustar.data.entity.QuestionEntity
+import br.com.nautilustar.data.local.entity.QuestionEntity
 import io.realm.Realm
 import java.lang.Exception
 
@@ -38,6 +38,21 @@ class QuestionCache : IQuestion, OutputQuestion, InputQuestion {
             realm.commitTransaction()
         } catch (e: Exception) {
             e.printStackTrace()
+        } finally {
+            realm.close()
+        }
+    }
+
+    override fun hasCache(): Boolean {
+        val realm = Realm.getDefaultInstance()
+        return try {
+            realm.beginTransaction()
+            val count = realm.where(QuestionEntity::class.java).count()
+            realm.commitTransaction()
+            count > 0
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
         } finally {
             realm.close()
         }

@@ -13,7 +13,8 @@ import br.com.nautilustar.quizsurvival.databinding.FragmentQuestionBinding
 import br.com.nautilustar.quizsurvival.features.questions.viewmodel.QuestionViewModel
 
 class QuestionFragment
-    : BaseFragment<FragmentQuestionBinding, QuestionViewModel>(), QuestionListener {
+    : BaseFragment<FragmentQuestionBinding, QuestionViewModel>(),
+    QuestionListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
