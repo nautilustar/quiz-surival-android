@@ -1,5 +1,6 @@
 package br.com.nautilustar.data.cloud
 
+import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import okhttp3.Interceptor
@@ -17,16 +18,14 @@ class NetworkModule {
     @Provides
     fun okHttpClient(
         @Named(USER_AGENT_INTERCEPTOR) userAgentInterceptor: Interceptor,
-        @Named(RESPONSE_INTERCEPTOR) responseInterceptor: Interceptor,
-        logInterceptor: HttpLoggingInterceptor
+        @Named(RESPONSE_INTERCEPTOR) responseInterceptor: Interceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
-            .connectTimeout(90, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
             .addInterceptor(userAgentInterceptor)
             .addInterceptor(responseInterceptor)
-            .addInterceptor(logInterceptor)
             .build()
     }
 
@@ -49,5 +48,10 @@ class NetworkModule {
         return retrofitBuilder
             .baseUrl(urlDomain)
             .build()
+    }
+
+    @Provides
+    fun gsonFactory(): GsonConverterFactory {
+        return GsonConverterFactory.create(GsonBuilder().create())
     }
 }

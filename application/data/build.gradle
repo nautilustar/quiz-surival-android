@@ -30,21 +30,23 @@ dependencies {
     implementation project(':domain')
 
     def libCore = rootProject.ext.coreDependencies
-    implementation libCore.kodein
-    implementation libCore.kotlin
-    implementation libCore.rx.rxAndroid
+    def libData = rootProject.ext.dataDependencies
 
+    //network
+    api libData.retrofit
+    api libData.retrofitConverter
+    api libData.retrofitAdapter
+    api libData.okHttpLogger
+    implementation libCore.google.gson
+
+    //dagger
+    implementation libCore.dagger.dagger
     implementation libCore.dagger.daggerAndroid
     implementation libCore.dagger.daggerSupport
-    kapt libCore.dagger.daggerProcessor
     kapt libCore.dagger.daggerCompiler
-    implementation libCore.dagger.dagger
+    kapt libCore.dagger.daggerProcessor
 
-    def libData = rootProject.ext.dataDependencies
-    implementation libData.okHttp
-    implementation libData.okHttpLogger
-    implementation libData.retrofit
-    implementation libData.retrofitConverter
-    implementation libData.retrofitAdapter
-    implementation libData.gson
+    //rx
+    implementation libCore.rx.rxJava
+    implementation libCore.rx.rxAndroid
 }

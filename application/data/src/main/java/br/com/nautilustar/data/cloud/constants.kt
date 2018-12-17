@@ -1,5 +1,5 @@
 package br.com.nautilustar.data.cloud
 
-const val USER_AGENT_INTERCEPTOR = "UserAgentInterceptor"
-const val RESPONSE_INTERCEPTOR = "ResponseInterceptor"
-const val URL_DOMAIN = "UrlDomain"
+const val USER_AGENT_INTERCEPTOR = "USER_AGENT_INTERCEPTOR"
+const val RESPONSE_INTERCEPTOR = "RESPONSE_INTERCEPTOR"
+const val URL_DOMAIN = "URL_DOMAIN"

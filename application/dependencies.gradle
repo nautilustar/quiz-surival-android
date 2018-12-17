@@ -11,7 +11,7 @@ ext {
             supportTest     : '1.0.2',
             dagger          : '2.15',
             okHttp          : '3.8.0',
-            retrofit        : '2.3.0'
+            retrofit        : '2.5.0'
     ]
 
     coreDependencies = [
@@ -93,7 +93,6 @@ ext {
             okHttpLogger     : "com.squareup.okhttp3:logging-interceptor:${version.okHttp}",
             retrofit         : "com.squareup.retrofit2:retrofit:${version.retrofit}",
             retrofitConverter: "com.squareup.retrofit2:converter-gson:${version.retrofit}",
-            retrofitAdapter  : "com.squareup.retrofit2:adapter-rxjava2:${version.retrofit}",
-            gson             : "com.google.code.gson:gson:2.8.1"
+            retrofitAdapter  : "com.squareup.retrofit2:adapter-rxjava2:${version.retrofit}"
     ]
 }

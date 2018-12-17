@@ -5,6 +5,7 @@ import io.reactivex.Observable
 import retrofit2.http.GET
 
 interface QuestionApi {
-    @GET
+
+    @GET("v1/questions")
     fun getQuestions(): Observable<List<QuestionResponse>>
 }

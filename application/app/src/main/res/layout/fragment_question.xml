@@ -8,7 +8,7 @@
                   type="br.com.nautilustar.domain.model.QuestionModel"/>
 
         <variable name="progress"
-                  type="Integer"/>
+                  type="int"/>
 
         <variable name="handlers"
                   type="br.com.nautilustar.quizsurvival.features.questions.screens.game.QuestionListener"/>

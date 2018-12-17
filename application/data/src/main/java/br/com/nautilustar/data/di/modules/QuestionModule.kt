@@ -30,22 +30,26 @@ class QuestionModule {
     }
 
     @Provides
-    fun questionCloudDataStore(questionApi: QuestionApi): QuestionCloudDataStore {
-        return QuestionCloudDataStore(questionApi)
+    fun questionCloudDataStore(
+        questionApi: QuestionApi,
+        mapper: QuestionCloudMapper
+    ): QuestionCloudDataStore {
+        return QuestionCloudDataStore(questionApi, mapper)
     }
 
     @Provides
-    fun questionLocalDataStore(cache: QuestionCache): QuestionLocalLocalDataStore {
-        return QuestionLocalLocalDataStore(cache)
+    fun questionLocalDataStore(
+        cache: QuestionCache,
+        mapper: QuestionLocalMapper
+    ): QuestionLocalLocalDataStore {
+        return QuestionLocalLocalDataStore(cache, mapper)
     }
 
     @Provides
     fun questionDataRepository(
         cloud: QuestionCloudDataStore,
-        store: QuestionLocalLocalDataStore,
-        cloudMapper: QuestionCloudMapper,
-        localMapper: QuestionLocalMapper
+        store: QuestionLocalLocalDataStore
     ): QuestionRepository {
-        return QuestionDataRepository(cloud, store, cloudMapper, localMapper)
+        return QuestionDataRepository(cloud, store)
     }
 }

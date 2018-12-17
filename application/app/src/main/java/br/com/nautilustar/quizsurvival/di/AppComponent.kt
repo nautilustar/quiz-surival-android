@@ -27,7 +27,6 @@ import javax.inject.Singleton
         FragmentModule::class,
         ViewModelModule::class,
         QuestionModule::class,
-        FactoryModule::class,
         InterceptorModule::class,
         NetworkModule::class,
         RequestModule::class,

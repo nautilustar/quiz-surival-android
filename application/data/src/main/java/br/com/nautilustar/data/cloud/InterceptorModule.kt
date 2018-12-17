@@ -1,10 +1,8 @@
 package br.com.nautilustar.data.cloud
 
-import br.com.nautilustar.data.BuildConfig
 import dagger.Module
 import dagger.Provides
 import okhttp3.Interceptor
-import okhttp3.logging.HttpLoggingInterceptor
 import javax.inject.Named
 import javax.inject.Singleton
 
@@ -12,9 +10,9 @@ import javax.inject.Singleton
 class InterceptorModule {
 
     @Provides
-    @Named(RESPONSE_INTERCEPTOR)
     @Singleton
-    fun interceptorResponse(): Interceptor {
+    @Named(RESPONSE_INTERCEPTOR)
+    fun provideInterceptorResponse(): Interceptor {
         return Interceptor { chain ->
             val requestBuilder = chain.request().newBuilder()
             requestBuilder.header("Content-Type", "application/json")
@@ -24,21 +22,8 @@ class InterceptorModule {
 
     @Provides
     @Singleton
-    fun httpLoggingInterceptor(): HttpLoggingInterceptor {
-        val httpLoggingInterceptor = HttpLoggingInterceptor()
-        httpLoggingInterceptor.level = if (BuildConfig.DEBUG) {
-            HttpLoggingInterceptor.Level.BODY
-        } else {
-            HttpLoggingInterceptor.Level.NONE
-        }
-
-        return httpLoggingInterceptor
-    }
-
-    @Provides
     @Named(USER_AGENT_INTERCEPTOR)
-    @Singleton
-    fun userAgentInterceptor(): Interceptor {
+    fun provideUserAgentInterceptor(): Interceptor {
         return Interceptor { chain ->
             val requestBuilder = chain.request().newBuilder()
             requestBuilder.addHeader("User-Agent", userAgent())

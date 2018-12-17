@@ -15,6 +15,7 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
+import io.realm.Realm
 import javax.inject.Inject
 
 class AndroidApplication : Application(),
@@ -33,6 +34,7 @@ class AndroidApplication : Application(),
     override fun onCreate() {
         super.onCreate()
         setupDagger()
+        setupRealm()
     }
 
     override fun activityInjector(): AndroidInjector<Activity> = dispatchingActivityAndroidInjector
@@ -56,6 +58,10 @@ class AndroidApplication : Application(),
         appComponent = createComponent().apply {
             inject(this@AndroidApplication)
         }
+    }
+
+    private fun setupRealm() {
+        Realm.init(this)
     }
 
     private fun handleActivity(activity: Activity?) {
